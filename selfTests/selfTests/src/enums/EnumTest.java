@@ -1,10 +1,10 @@
 package enums;
 
-enum Animal {CROCODILE, HIPOPOTAMUS, RABBIT, DOG, CAT}
+enum Animal {CROCODILE, HIPOPOTAMUS, RABBIT, DOG, CAT, NEW}
 
 public class EnumTest {
 	
-	protected enum Animals {CROCODILE, HIPOPOTAMUS, DOG, CAT}
+	protected enum Animals {CROCODILE, HIPOPOTAMUS, DOG, CAT, NEW}
 	
 	public static void main(String[] args)
 	{
@@ -22,7 +22,15 @@ public class EnumTest {
 		System.out.println("animal2.name(): "+animal2.name());
 		System.out.println("animal2.getDeclaringClass(): "+animal2.getDeclaringClass());
 		
-		//animal2.hashCode();
+		
+		System.out.println("animal2.name(): "+animal2.name());
+		System.out.println("animal2.ordinal(): "+Animals.NEW.ordinal());
+		
+		System.out.println("animal1 = animal2"+(animal1 = animal2));
+		//System.out.println("animal1 > animal2"+(animal1 > animal2)); compile error
+		//System.out.println("animal1 + animal2"+(animal1 + animal2)); compile error
+		//animal1.compareTo(o)
+		
 	}
 
 }
