@@ -2,15 +2,19 @@ package enums;
 
 enum Animal {CROCODILE, HIPOPOTAMUS, RABBIT, DOG, CAT, NEW}
 
+
 public class EnumTest {
 	
 	protected enum Animals {CROCODILE, HIPOPOTAMUS, DOG, CAT, NEW}
+	enum Animals3 {ANIMAL1, ANIMAL2}
+
 	
 	public static void main(String[] args)
 	{
 		Animals animal2=Animals.HIPOPOTAMUS;
 		Animals animal1=Animals.CAT;
 		System.out.println("Animals2=Animals: "+animal2.compareTo(animal1));
+		//System.out.println("Animals2=Animals: "+animal2.compareTo(Animals3.ANIMAL1));//compile error
 		animal1=Animals.DOG;
 		animal2=Animals.DOG;
 		System.out.println("animal1.equals(animal2): "+animal1.equals(animal2));
@@ -30,6 +34,9 @@ public class EnumTest {
 		//System.out.println("animal1 > animal2"+(animal1 > animal2)); compile error
 		//System.out.println("animal1 + animal2"+(animal1 + animal2)); compile error
 		//animal1.compareTo(o)
+		
+		System.out.println("Animals3.valueOf(\"ANIMAL1\")="+Animals3.valueOf("ANIMAL2"));
+		System.out.println("Animals3.valueOf(\"ANIMAL1\")="+Animals3.valueOf("DOG"));
 		
 	}
 
