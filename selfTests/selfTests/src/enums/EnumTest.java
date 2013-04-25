@@ -5,7 +5,9 @@ enum Animal {CROCODILE, HIPOPOTAMUS, RABBIT, DOG, CAT, NEW}
 
 public class EnumTest {
 	
-	protected enum Animals {CROCODILE, HIPOPOTAMUS, DOG, CAT, NEW}
+	protected enum Animals {CROCODILE, HIPOPOTAMUS, 
+		DOG { private int i; }, 
+		CAT, NEW}
 	enum Animals3 {ANIMAL1, ANIMAL2}
 
 	
@@ -14,6 +16,7 @@ public class EnumTest {
 		Animals animal2=Animals.HIPOPOTAMUS;
 		Animals animal1=Animals.CAT;
 		System.out.println("Animals2=Animals: "+animal2.compareTo(animal1));
+		//System.out.println("animal2.compareTo(null) = "+animal2.compareTo(null));//Exception in thread "main" java.lang.NullPointerException
 		//System.out.println("Animals2=Animals: "+animal2.compareTo(Animals3.ANIMAL1));//compile error
 		animal1=Animals.DOG;
 		animal2=Animals.DOG;
@@ -24,6 +27,7 @@ public class EnumTest {
 		System.out.println("animal2.getClass(): "+animal2.getClass().getName());
 		System.out.println("animal2.hashCode(): "+animal2.hashCode());
 		System.out.println("animal2.name(): "+animal2.name());
+		System.out.println("animal2.getClass(): "+animal2.getClass());
 		System.out.println("animal2.getDeclaringClass(): "+animal2.getDeclaringClass());
 		
 		
@@ -36,7 +40,8 @@ public class EnumTest {
 		//animal1.compareTo(o)
 		
 		System.out.println("Animals3.valueOf(\"ANIMAL1\")="+Animals3.valueOf("ANIMAL2"));
-		System.out.println("Animals3.valueOf(\"ANIMAL1\")="+Animals3.valueOf("DOG"));
+		//System.out.println("Animals3.valueOf(\"ANIMAL1\")="+Animals3.valueOf("DOG"));//Exception
+		//System.out.println("Animals3.valueOf(\"ANIMAL1\")="+Animals3.valueOf(null));//Exception in thread "main" java.lang.NullPointerException: Name is null		
 		
 	}
 
