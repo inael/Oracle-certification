@@ -8,13 +8,17 @@ public class EnumTest {
 	protected enum Animals {CROCODILE, HIPOPOTAMUS, 
 		DOG { private int i; }, 
 		CAT, NEW}
-	enum Animals3 {ANIMAL1, ANIMAL2}
+	enum Animals3 {
+		ANIMAL1, ANIMAL2;
+		public boolean b;
+		}
 
 	
 	public static void main(String[] args)
 	{
 		Animals animal2=Animals.HIPOPOTAMUS;
 		Animals animal1=Animals.CAT;
+		Animals3 animal3=Animals3.ANIMAL1;
 		System.out.println("Animals2=Animals: "+animal2.compareTo(animal1));
 		//System.out.println("animal2.compareTo(null) = "+animal2.compareTo(null));//Exception in thread "main" java.lang.NullPointerException
 		//System.out.println("Animals2=Animals: "+animal2.compareTo(Animals3.ANIMAL1));//compile error
@@ -42,6 +46,12 @@ public class EnumTest {
 		System.out.println("Animals3.valueOf(\"ANIMAL1\")="+Animals3.valueOf("ANIMAL2"));
 		//System.out.println("Animals3.valueOf(\"ANIMAL1\")="+Animals3.valueOf("DOG"));//Exception
 		//System.out.println("Animals3.valueOf(\"ANIMAL1\")="+Animals3.valueOf(null));//Exception in thread "main" java.lang.NullPointerException: Name is null		
+		
+		System.out.println("Animals.class.getSuperclass()="+Animals.class.getSuperclass());
+		System.out.println("animal1.getClass().getSuperclass()="+animal1.getClass().getSuperclass());
+		System.out.println("animal1.getClass().getSuperclass().getSuperclass()="+animal1.getClass().getSuperclass().getSuperclass());
+		
+		System.out.println("animal3.b="+animal3.b);
 		
 	}
 
