@@ -1,0 +1,14 @@
+package apiContents;
+import java.util.regex.Pattern;
+public class Print 
+{
+    public static void main(String args[])   
+    {
+        Pattern pattern = Pattern.compile("\\d [a-z]+");
+        Matcher matcher = pattern.matcher("123 a 34a ");
+        while (matcher.find())
+        {
+            System.out.println(matcher.start() + " " );
+        }
+    }
+}
